@@ -50,7 +50,7 @@ function ExistingCustomer() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict/existing_customer",
+        "https://credit-risk-api-4o5i.onrender.com/predict/existing_customer",
         {
           SK_ID_CURR: Number(formData.SK_ID_CURR),
           AGE_YEARS: Number(formData.AGE_YEARS),

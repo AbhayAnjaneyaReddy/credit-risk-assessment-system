@@ -158,7 +158,7 @@ if (carAge < 0) {
 
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict/new_customer",
+        "https://credit-risk-api-4o5i.onrender.com/predict/new_customer",
         {
           CODE_GENDER: formData.CODE_GENDER,
 
