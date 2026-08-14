@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy import create_engine
 import shap
+from sqlalchemy.engine import URL
 
 load_dotenv()
 print("===== MAIN.PY LOADED =====")
@@ -111,10 +112,24 @@ new_customer_explainer = shap.TreeExplainer(new_customer_model)
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
 DB_NAME = os.getenv("DB_NAME")
 
+database_url = URL.create(
+    drivername="mysql+mysqlconnector",
+    username=DB_USER,
+    password=DB_PASSWORD,
+    host=DB_HOST,
+    port=int(DB_PORT),
+    database=DB_NAME
+)
+
 engine = create_engine(
-    f"mysql+mysqlconnector://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
+    database_url,
+    connect_args={
+        "ssl_ca": os.path.join(BASE_DIR, "ca.pem"),
+        "ssl_verify_cert": True
+    }
 )
 
 existing_customer_threshold = joblib.load(
