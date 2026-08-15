@@ -368,3 +368,21 @@ Possible future improvements include:
 **AI-Powered Credit Risk Assessment System**
 
 An end-to-end machine learning project combining **machine learning, explainable AI, SQL, FastAPI, React, and cloud deployment** to build a complete credit-risk assessment platform.
+
+## 📸 Application Screenshots
+
+### 🏠 Landing Page
+
+![Landing Page](docs/screenshots/Home%20Page.png)
+
+### 👤 Existing Customer
+
+![Existing Customer](docs/screenshots/Existing%20Customer%20Page.png)
+
+### 📊 Prediction Dashboard
+
+![Prediction Dashboard](docs/screenshots/Dashboard.png)
+
+### 🔍 SHAP Explainability
+
+![SHAP Explainability](docs/screenshots/SHAP.png)
